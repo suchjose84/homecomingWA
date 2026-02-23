@@ -1,0 +1,162 @@
+:root{
+  --bg:#f4f8f5;
+  --card:#fff;
+  --text:#1f2933;
+  --muted:#6b7280;
+  --border:#e5e7eb;
+  --accent:#2f855a;
+  --accent2:#2563eb;
+  --shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+*{box-sizing:border-box}
+body{
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: linear-gradient(180deg, #f7faf8, #eef5f1);
+  color: var(--text);
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+}
+h1, h2, h3 {
+  font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-weight: 700; }
+h2 { font-weight: 700; }
+h3 { font-weight: 600; }
+
+.btn,
+.kicker,
+.host-badge,
+.announce-badge,
+.pill {
+  font-family: 'Inter', system-ui, sans-serif;
+  letter-spacing: 0.2px;
+}
+
+.container{width:min(1100px,92%);margin:auto}
+
+.site-header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0; z-index: 10;}
+.header-inner{display:flex;justify-content:space-between;align-items:center;padding:12px 0}
+
+.brand{display:flex;gap:12px;align-items:center}
+
+.brand-logo{
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #ffffff;
+  padding: 4px;
+  border: 1px solid var(--border);
+}
+
+.nav a{margin-left:14px;color:var(--muted);text-decoration:none}
+.nav a:hover{
+  color: var(--text);
+  text-decoration: underline;
+}
+
+.hero-video{padding:40px 0;text-align:center}
+.video-wrapper{max-width:900px;margin:0 auto 20px;border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
+.video-wrapper iframe{width:100%;height:480px}
+
+.kicker{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid var(--border)}
+.host-badge{margin:10px 0;font-weight:800}
+
+.event-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.pill{border:1px solid var(--border);padding:8px 12px;border-radius:999px}
+
+.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:20px 0}
+.count-box{background:#fff;border:1px solid var(--border);padding:12px;border-radius:14px}
+
+.btn{padding:10px 14px;border-radius:12px;border:1px solid var(--border);text-decoration:none;font-weight:800}
+.btn.primary{background:linear-gradient(135deg,#38a169,#2f855a);color:#fff}
+.btn.ghost{background:#fff}
+
+.section{padding:46px 0}
+.section.alt{background:rgba(47,133,90,.06)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+
+.card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:16px;box-shadow:var(--shadow)}
+.card.accent{background:linear-gradient(180deg,rgba(56,161,105,.12),#fff)}
+
+.list{padding-left:18px}
+
+.callout{background:rgba(47,133,90,.08);padding:12px;border-radius:12px;margin-bottom:14px}
+
+.pay-grid,.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pay-card,.contact-card{border:1px solid var(--border);padding:12px;border-radius:14px;background:#fff}
+
+.mono{font-family:monospace}
+
+.site-footer{padding:24px 0;border-top:1px solid var(--border);text-align:center}
+.poster img{
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+}
+
+@media(max-width:900px){
+  .grid,.pay-grid,.contact-grid{grid-template-columns:1fr}
+  .countdown{grid-template-columns:repeat(2,1fr)}
+  .video-wrapper iframe{height:260px}
+}
+
+.announce-badge{
+  display:inline-block;
+  margin: 10px 0 6px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(37,99,235,0.25);
+  background: rgba(37,99,235,0.10);
+  font-weight: 900;
+}
+
+/* Mobile-friendly top nav (no hamburger) */
+@media (max-width: 600px){
+  .header-inner{
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .brand{
+    justify-content: center;
+  }
+
+  .nav{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .nav a{
+    margin-left: 0;            /* overrides your desktop margin-left */
+    text-align: center;
+    padding: 10px 8px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.2;
+    white-space: nowrap;       /* keeps “Highlights” on one line */
+    box-shadow: var(--shadow);
+  }
+
+  .nav a:active{
+    transform: translateY(1px);
+  }
+  .poster img{
+    max-height: 520px;     /* adjust if you want shorter/taller */
+    object-fit: cover;     /* crops nicely */
+  }
+
+}
