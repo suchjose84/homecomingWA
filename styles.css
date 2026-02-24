@@ -160,3 +160,21 @@ h3 { font-weight: 600; }
   }
 
 }
+
+/* Single payment layout */
+.single-payment{
+  grid-template-columns: 1fr;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.pay-card.featured{
+  text-align: center;
+  background: linear-gradient(135deg, rgba(56,161,105,.12), #ffffff);
+  border: 2px solid rgba(56,161,105,.3);
+}
+
+.pay-card.featured h4{
+  font-size: 20px;
+  margin-bottom: 8px;
+}
