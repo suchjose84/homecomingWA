@@ -1,192 +1,527 @@
+/* =========================================
+   🎨 ROOT + BASE
+========================================= */
+
 :root{
-  --bg:#f4f8f5;
-  --card:#fff;
-  --text:#1f2933;
-  --muted:#6b7280;
-  --border:#e5e7eb;
-  --accent:#2f855a;
-  --accent2:#2563eb;
-  --shadow:0 10px 30px rgba(0,0,0,.08);
+  --primary:#0B3C5D;
+  --primary-soft:#174A7C;
+  --accent:#F4B400;
+
+  --bg:#F5F7FA;
+  --card:#FFFFFF;
+  --text:#1F2937;
+  --muted:#6B7280;
+  --border:#E5E7EB;
+
+  --shadow:0 12px 30px rgba(0,0,0,.08);
 }
 
 *{box-sizing:border-box}
+
 body{
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  margin: 0;
-  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  background: linear-gradient(180deg, #f7faf8, #eef5f1);
-  color: var(--text);
-  line-height: 1.6;
-  letter-spacing: -0.01em;
-}
-h1, h2, h3 {
-  font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
-  letter-spacing: -0.02em;
+  margin:0;
+  font-family:'Inter', system-ui;
+  background:var(--bg);
+  color:var(--text);
 }
 
-h1 { font-weight: 700; }
-h2 { font-weight: 700; }
-h3 { font-weight: 600; }
-
-.btn,
-.kicker,
-.host-badge,
-.announce-badge,
-.pill {
-  font-family: 'Inter', system-ui, sans-serif;
-  letter-spacing: 0.2px;
+/* HEADINGS */
+h1, h2, h3{
+  font-family:'Space Grotesk', sans-serif;
+  letter-spacing:-0.5px;
 }
 
-.container{width:min(1100px,92%);margin:auto}
+/* =========================================
+   📦 LAYOUT
+========================================= */
 
-.site-header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0; z-index: 10;}
-.header-inner{display:flex;justify-content:space-between;align-items:center;padding:12px 0}
+.container{
+  width:min(1100px,92%);
+  margin:auto;
+}
+
+.section{
+  padding:46px 0;
+}
+
+/* =========================================
+   🧭 HEADER
+========================================= */
+
+.site-header{
+  background:#fff;
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+.header-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 0;
+}
 
 .brand{display:flex;gap:12px;align-items:center}
 
 .brand-logo{
-  width: 42px;
-  height: 42px;
-  object-fit: contain;
-  border-radius: 10px;
-  background: #ffffff;
-  padding: 4px;
-  border: 1px solid var(--border);
+  width:42px;
+  height:42px;
+  border-radius:10px;
+  border:1px solid var(--border);
 }
 
-.nav a{margin-left:14px;color:var(--muted);text-decoration:none}
+.nav a{
+  margin-left:14px;
+  text-decoration:none;
+  color:var(--muted);
+  transition:0.2s;
+}
+
 .nav a:hover{
-  color: var(--text);
-  text-decoration: underline;
+  color:var(--primary);
 }
 
-.hero-video{padding:40px 0;text-align:center}
-.video-wrapper{max-width:900px;margin:0 auto 20px;border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
-.video-wrapper iframe{width:100%;height:480px}
+/* =========================================
+   🎥 HERO (SPLIT)
+========================================= */
 
-.kicker{display:inline-block;padding:6px 10px;border-radius:999px;border:1px solid var(--border)}
-.host-badge{margin:10px 0;font-weight:800}
-
-.event-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.pill{border:1px solid var(--border);padding:8px 12px;border-radius:999px}
-
-.countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:20px 0}
-.count-box{background:#fff;border:1px solid var(--border);padding:12px;border-radius:14px}
-
-.btn{padding:10px 14px;border-radius:12px;border:1px solid var(--border);text-decoration:none;font-weight:800}
-.btn.primary{background:linear-gradient(135deg,#38a169,#2f855a);color:#fff}
-.btn.ghost{background:#fff}
-
-.section{padding:46px 0}
-.section.alt{background:rgba(47,133,90,.06)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-
-.card{background:#fff;border:1px solid var(--border);border-radius:18px;padding:16px;box-shadow:var(--shadow)}
-.card.accent{background:linear-gradient(180deg,rgba(56,161,105,.12),#fff)}
-
-.list{padding-left:18px}
-
-.callout{background:rgba(47,133,90,.08);padding:12px;border-radius:12px;margin-bottom:14px}
-
-.pay-grid,.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.pay-card,.contact-card{border:1px solid var(--border);padding:12px;border-radius:14px;background:#fff}
-
-.contact-card a{
-  display: inline-block;
-  margin-top: 8px;
-  font-weight: 700;
-  text-decoration: none;
-  color: var(--accent2);
+.hero-video{
+  padding:40px 0;
 }
 
-.contact-card a:hover{
-  text-decoration: underline;
+.hero-inner{
+  display:grid;
+  grid-template-columns:1fr 1.8fr;
+  align-items:center;
+  gap:40px;
+  padding:0 40px;
 }
 
-.mono{font-family:monospace}
+.hero-left{
+  display:flex;
+  align-items:center;
+}
 
-.site-footer{padding:24px 0;border-top:1px solid var(--border);text-align:center}
-.poster img{
+.hero-left .container{
+  max-width:480px;
+  margin:0;
+}
+
+.hero-left h1{
+  margin:6px 0 10px;
+  font-size:42px;
+  color:var(--primary);
+}
+
+.hero-tagline{
+  margin:10px 0 16px;
+  font-size:16px;
+  color:var(--muted);
+}
+
+.hero-actions{
+  margin-top:30px;
+}
+
+.hero-right{
+  display:flex;
+  justify-content:flex-end;
+}
+
+/* VIDEO */
+.video-slider{
+  position:relative;
+  width:100%;
+  max-width:720px;
+  height:460px;
+  border-radius:12px;
+  overflow:hidden;
+  background:#000;
+  border:1px solid rgba(11,60,93,0.1);
+  box-shadow:0 20px 50px rgba(0,0,0,0.25);
+}
+
+.video-slider video{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition:opacity 1s ease;
+}
+
+.video-slider video.active{
+  opacity:1;
+}
+
+/* 🔊 BUTTON */
+.unmute-btn{
+  position:absolute;
+  bottom:16px;
+  right:16px;
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  border:none;
+  background:rgba(0,0,0,0.6);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+}
+
+/* =========================================
+   📝 HERO TEXT
+========================================= */
+
+.kicker{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid var(--primary);
+  color:var(--primary);
+  font-weight:600;
+}
+
+.host-badge{
+  margin:10px 0;
+  font-weight:800;
+}
+
+.event-row{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.pill{
+  border:1px solid var(--primary);
+  color:var(--primary);
+  background:rgba(11,60,93,0.05);
+  padding:8px 12px;
+  border-radius:999px;
+}
+
+/* =========================================
+   ⏳ COUNTDOWN (FIXED)
+========================================= */
+
+.countdown{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+  margin:20px 0;
+}
+
+.count-box{
+  background:#fff;
+  border:1px solid var(--border);
+  padding:14px;
+  border-radius:14px;
+  text-align:center;
+}
+
+/* BIG NUMBERS */
+.count-box div:first-child{
+  font-size:24px;
+  font-weight:800;
+  color:var(--primary);
+}
+
+/* LABEL */
+.count-box div:last-child{
+  font-size:12px;
+  color:var(--muted);
+}
+
+/* =========================================
+   📊 PROGRESS BAR
+========================================= */
+
+.goal-progress{margin:18px 0}
+
+.goal-top{
+  display:flex;
+  justify-content:space-between;
+}
+
+.progress-bar{
+  height:10px;
+  background:#E5E7EB;
+  border-radius:999px;
+  overflow:hidden;
+}
+
+.progress-fill{
+  height:100%;
+  background:linear-gradient(90deg,var(--primary),var(--primary-soft));
+}
+
+/* =========================================
+   🎯 GOAL SECTION
+========================================= */
+
+.goal-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+
+.goal-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:20px;
+}
+
+.goal-card.highlight{
+  background:rgba(244,180,0,0.08);
+}
+
+/* =========================================
+   📅 EVENT DETAILS
+========================================= */
+
+.details-card{
+  display:grid;
+  grid-template-columns:1fr 1.4fr;
+  gap:20px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:24px;
+  box-shadow:var(--shadow);
+}
+
+.details-left{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+
+.fee-box{
+  background:rgba(244,180,0,0.12);
+  padding:14px;
+  border-radius:12px;
+}
+
+.details-right{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  align-items:center;
+}
+
+.shirt-image img{
+  width:100%;
+  border-radius:14px;
+}
+
+.price{
+  font-size:22px;
+  font-weight:800;
+  color:var(--primary);
+}
+
+/* =========================================
+   🔘 BUTTONS
+========================================= */
+
+.btn{
+  padding:10px 14px;
+  border-radius:12px;
+  font-weight:800;
+}
+
+.btn.primary{
+  background:linear-gradient(135deg,var(--primary),var(--primary-soft));
+  color:#fff;
+}
+
+.btn.ghost{
+  background:#fff;
+  border:1px solid var(--border);
+}
+
+/* =========================================
+   📦 CARDS
+========================================= */
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+
+.card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:16px;
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+
+/* =========================================
+   🖼️ POSTER CARD
+========================================= */
+
+.card-poster{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:16px;
+  width: 85%;
+  margin: 0 auto;
+
+  box-shadow:var(--shadow);
+
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+/* TITLE */
+.card-poster h3{
+  margin:0;
+  color:var(--primary);
+}
+
+/* IMAGE */
+.card-poster img{
   width: 100%;
   height: auto;
-  border-radius: 14px;
-  border: 1px solid var(--border);
+  border-radius:10px;
+  display: block;
+  
 }
+
+
+
+/* =========================================
+   📎 FOOTER
+========================================= */
+
+.site-footer{
+  padding:24px 0;
+  border-top:1px solid var(--border);
+  text-align:center;
+}
+
+/* =========================================
+   📱 RESPONSIVE
+========================================= */
 
 @media(max-width:900px){
-  .grid,.pay-grid,.contact-grid{grid-template-columns:1fr}
-  .countdown{grid-template-columns:repeat(2,1fr)}
-  .video-wrapper iframe{height:260px}
+  .grid,
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .countdown{
+    grid-template-columns:repeat(2,1fr);
+  }
 }
 
-.announce-badge{
-  display:inline-block;
-  margin: 10px 0 6px;
-  padding: 10px 14px;
-  border-radius: 999px;
-  border: 1px solid rgba(37,99,235,0.25);
-  background: rgba(37,99,235,0.10);
-  font-weight: 900;
+@media(max-width:768px){
+
+  .hero-inner{
+    grid-template-columns:1fr;
+    padding:0 16px;
+  }
+
+  .hero-right{
+    order:-1;
+  }
+
+  .video-slider{
+    height:260px;
+  }
+
+  .hero-left{
+    text-align:center;
+    justify-content:center;
+  }
+
+  .event-row{
+    justify-content:center;
+  }
+
+  .goal-grid{
+    grid-template-columns:1fr;
+  }
+
+  .details-card{
+    grid-template-columns:1fr;
+  }
+
+  .details-right{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
 }
 
-/* Mobile-friendly top nav (no hamburger) */
-@media (max-width: 600px){
-  .header-inner{
-    flex-direction: column;
-    align-items: stretch;
-    gap: 10px;
-    padding: 10px 0;
-  }
 
-  .brand{
-    justify-content: center;
-  }
 
-  .nav{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-  }
+/* =========================================
+   📸 GALLERY
+========================================= */
 
-  .nav a{
-    margin-left: 0;            /* overrides your desktop margin-left */
-    text-align: center;
-    padding: 10px 8px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    background: #fff;
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 1.2;
-    white-space: nowrap;       /* keeps “Highlights” on one line */
-    box-shadow: var(--shadow);
-  }
-
-  .nav a:active{
-    transform: translateY(1px);
-  }
-  .poster img{
-    max-height: 520px;     /* adjust if you want shorter/taller */
-    object-fit: cover;     /* crops nicely */
-  }
-
+.gallery-hero{
+  text-align:center;
 }
 
-/* Single payment layout */
-.single-payment{
-  grid-template-columns: 1fr;
-  max-width: 400px;
-  margin: 0 auto;
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px;
 }
 
-.pay-card.featured{
-  text-align: center;
-  background: linear-gradient(135deg, rgba(56,161,105,.12), #ffffff);
-  border: 2px solid rgba(56,161,105,.3);
+.gallery-grid img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:12px;
+  cursor:pointer;
+  transition:0.3s ease;
 }
 
-.pay-card.featured h4{
-  font-size: 20px;
-  margin-bottom: 8px;
+.gallery-grid img:hover{
+  transform:scale(1.05);
+}
+
+/* =========================================
+   🎥 VIDEO GRID
+========================================= */
+
+.video-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+}
+
+.video-grid video{
+  width:100%;
+  border-radius:12px;
+}
+
+/* =========================================
+   📱 RESPONSIVE
+========================================= */
+
+@media(max-width:900px){
+  .gallery-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .video-grid{
+    grid-template-columns:1fr;
+  }
 }
