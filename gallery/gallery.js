@@ -20,7 +20,7 @@ function renderGallery(images, folder, containerId) {
 
   images.forEach(file => {
     const img = document.createElement("img");
-    img.src = `/assets/alumni-pics/${folder}/${file}`;
+    img.src = `../assets/alumni-pics/${folder}/${file}`;
     img.alt = "";
     img.loading = "lazy";
     container.appendChild(img);
